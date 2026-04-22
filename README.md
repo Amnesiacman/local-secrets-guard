@@ -2,16 +2,25 @@
 
 [Русская версия](README.ru.md)
 
-Local and CI scanner for potential secret leakage in files.
+Scan files for potential secrets leakage before commit or in CI.
 
-## Quick start
+## Features
+
+- recursive scanning
+- pattern-based secret detection
+- allowlist support
+- strict CI mode
+- text/json output
+
+## Usage
 
 ```bash
-# Read CLI help
-# (examples may differ by project)
+python3 main.py . --strict
+python3 main.py . --format json
+python3 main.py . --allowlist .secrets-allowlist --strict
 ```
 
-## Documentation
+## Exit codes
 
-- See project files and workflow docs in this repository.
-- For Russian documentation, open `README.ru.md`.
+- `0` no blocking findings
+- `1` strict mode failed
