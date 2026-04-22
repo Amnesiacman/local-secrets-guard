@@ -18,4 +18,3 @@ def test_cli_strict_fails_on_findings(tmp_path: Path):
     f.write_text("token=abcdefghijklmnopqrstuvwxyz123456\n", encoding="utf-8")
     code = main([str(f), "--strict"])
     assert code == 1
-

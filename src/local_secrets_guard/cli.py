@@ -26,4 +26,3 @@ def main(argv=None) -> int:
     if args.strict and not report["ok"]:
         return 1
     return 0
-

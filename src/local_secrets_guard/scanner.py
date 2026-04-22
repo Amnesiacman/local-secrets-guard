@@ -76,4 +76,3 @@ def to_text(report: dict) -> str:
             f"- {finding['file']}:{finding['line']} [{finding['rule']}] {finding['snippet']}"
         )
     return "\n".join(lines).rstrip()
-

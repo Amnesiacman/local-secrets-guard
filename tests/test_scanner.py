@@ -20,4 +20,3 @@ def test_allowlist_suppresses_findings(tmp_path: Path):
     report = scan_paths([tmp_path], allowlist_path=allow)
     assert report["ok"] is True
     assert report["total_findings"] == 0
-

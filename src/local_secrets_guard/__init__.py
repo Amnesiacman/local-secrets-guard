@@ -1,2 +1,1 @@
 """local-secrets-guard package."""
-
