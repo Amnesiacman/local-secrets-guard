@@ -1,32 +1,17 @@
 # local-secrets-guard
 
-![CI](https://github.com/Amnesiacman/local-secrets-guard/actions/workflows/ci.yml/badge.svg)
+[Русская версия](README.ru.md)
 
-`local-secrets-guard` сканирует файлы на потенциальные утечки секретов для локального запуска и CI.
+Local and CI scanner for potential secret leakage in files.
 
-## Что умеет v0.1
-
-- ищет типовые секреты по regex-паттернам (API keys, tokens, private key headers)
-- сканирует файлы и директории рекурсивно
-- поддерживает allowlist (`--allowlist`)
-- выводит отчёт в `text` или `json`
-- в `--strict` режиме возвращает код `1`, если есть находки
-
-## Использование
+## Quick start
 
 ```bash
-python3 -m pip install -e .
-local-secrets-guard . --strict
+# Read CLI help
+# (examples may differ by project)
 ```
 
-JSON-отчёт:
+## Documentation
 
-```bash
-local-secrets-guard . --format json
-```
-
-С allowlist:
-
-```bash
-local-secrets-guard . --allowlist .secrets-allowlist --strict
-```
+- See project files and workflow docs in this repository.
+- For Russian documentation, open `README.ru.md`.
