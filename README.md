@@ -1,5 +1,7 @@
 # local-secrets-guard
 
+![CI](https://github.com/Amnesiacman/local-secrets-guard/actions/workflows/ci.yml/badge.svg)
+
 `local-secrets-guard` сканирует файлы на потенциальные утечки секретов для локального запуска и CI.
 
 ## Что умеет v0.1
