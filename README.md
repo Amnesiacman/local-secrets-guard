@@ -1,22 +1,30 @@
 # local-secrets-guard
 
-Pre-commit and CI scanner for potential secrets leakage.
+`local-secrets-guard` сканирует файлы на потенциальные утечки секретов для локального запуска и CI.
 
-## MVP status
+## Что умеет v0.1
 
-- Basic CLI scaffold is ready (`main.py`).
-- Supports `--format text|json` and `--dry-run`.
-- Intended as a foundation for iterative feature work.
+- ищет типовые секреты по regex-паттернам (API keys, tokens, private key headers)
+- сканирует файлы и директории рекурсивно
+- поддерживает allowlist (`--allowlist`)
+- выводит отчёт в `text` или `json`
+- в `--strict` режиме возвращает код `1`, если есть находки
 
-## Quick start
+## Использование
 
 ```bash
-python3 main.py --help
-python3 main.py --format json --dry-run
+python3 -m pip install -e .
+local-secrets-guard . --strict
 ```
 
-## Next steps
+JSON-отчёт:
 
-1. Add domain-specific command set and config file support.
-2. Add tests and GitHub Actions workflow.
-3. Package and publish first tagged release.
+```bash
+local-secrets-guard . --format json
+```
+
+С allowlist:
+
+```bash
+local-secrets-guard . --allowlist .secrets-allowlist --strict
+```
